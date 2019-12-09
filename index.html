@@ -10,7 +10,7 @@
 	position: relative;
 	display: block;
 	vertical-align: top;
-	width: 100px;
+	width: 116px;
 	height: 30px;
 	padding: 3px;
 	margin:0;
@@ -71,8 +71,8 @@
 	background: #66B5EE;
 	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), inset 0 0 3px rgba(0, 0, 0, 0.2);
 }
-.switch-input.yellow:checked ~ .switch-label {
-	background: #EDC723;
+.switch-input.green:checked ~ .switch-label {
+	background: #53C050;
 	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), inset 0 0 3px rgba(0, 0, 0, 0.2);
 }
 .switch-input:checked ~ .switch-label:before {
@@ -106,7 +106,7 @@
 	box-shadow: inset 0 1px rgba(0, 0, 0, 0.02);
 }
 .switch-input:checked ~ .switch-handle {
-	left: 74px;
+	left: 90px;
 	box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -143,7 +143,7 @@
 		<header id="header">Project Planner</header>
 		<section>
 				<div class="main">
-					<p>INSTRUCTIONS: Select ALL criteria that are important to your project:</p>
+					<p><B>INSTRUCTIONS:</B> Select ALL CRITERIA that are important to your project:</p>
 				</div>
 				<div class="main">
 					<div class="leftside">
@@ -152,7 +152,7 @@
 					<div class="rightside">
 						<label class="switch">
 						<input id="good" class="switch-input red" type="checkbox" />
-						<span class="switch-label" data-on="Yes" data-off="No"></span> <span class="switch-handle"></span> </label>
+						<span class="switch-label" data-on="Must Have" data-off=""></span> <span class="switch-handle"></span> </label>
 					</div>
 				</div>
 				<div class="main">
@@ -162,7 +162,7 @@
 					<div class="rightside">
 						<label class="switch">
 						<input id="fast" class="switch-input blue" type="checkbox" />
-						<span class="switch-label" data-on="Yes" data-off="No"></span> <span class="switch-handle"></span> </label>
+						<span class="switch-label" data-on="Must Have" data-off=""></span> <span class="switch-handle"></span> </label>
 					</div>
 				</div>
 				<div class="main">
@@ -171,8 +171,8 @@
 					</div>
 					<div class="rightside">
 						<label class="switch">
-						<input id="cheap" class="switch-input yellow" type="checkbox" />
-						<span class="switch-label" data-on="Yes" data-off="No"></span> <span class="switch-handle"></span> </label>
+						<input id="cheap" class="switch-input green" type="checkbox" />
+						<span class="switch-label" data-on="Must Have" data-off=""></span> <span class="switch-handle"></span> </label>
 					</div>
 				</div>
 		</section>
