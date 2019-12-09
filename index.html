@@ -1,0 +1,220 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>&lt;HTML&gt;LION.com Demo</title>
+<link href="css/css.css" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+<style>
+.switch {
+	position: relative;
+	display: block;
+	vertical-align: top;
+	width: 100px;
+	height: 30px;
+	padding: 3px;
+	margin:0;
+	background: linear-gradient(to bottom, #eeeeee, #FFFFFF 25px);
+	background-image: -webkit-linear-gradient(top, #eeeeee, #FFFFFF 25px);
+	border-radius: 18px;
+	box-shadow: inset 0 -1px white, inset 0 1px 1px rgba(0, 0, 0, 0.05);
+	cursor: pointer;
+  box-sizing:content-box;
+}
+.switch-input {
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+  box-sizing:content-box;
+}
+.switch-label {
+	position: relative;
+	display: block;
+	height: inherit;
+	font-size: 10px;
+	text-transform: uppercase;
+	background: #eceeef;
+	border-radius: inherit;
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.15);
+  box-sizing:content-box;
+}
+.switch-label:before, .switch-label:after {
+	position: absolute;
+	top: 50%;
+	margin-top: -.5em;
+	line-height: 1;
+	-webkit-transition: inherit;
+	-moz-transition: inherit;
+	-o-transition: inherit;
+	transition: inherit;
+  box-sizing:content-box;
+}
+.switch-label:before {
+	content: attr(data-off);
+	right: 11px;
+	color: #aaaaaa;
+	text-shadow: 0 1px rgba(255, 255, 255, 0.5);
+}
+.switch-label:after {
+	content: attr(data-on);
+	left: 11px;
+	color: #FFFFFF;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.2);
+	opacity: 0;
+}
+.switch-input.red:checked ~ .switch-label {
+	background: #ED5842;
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), inset 0 0 3px rgba(0, 0, 0, 0.2);
+}
+.switch-input.blue:checked ~ .switch-label {
+	background: #66B5EE;
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), inset 0 0 3px rgba(0, 0, 0, 0.2);
+}
+.switch-input.yellow:checked ~ .switch-label {
+	background: #EDC723;
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), inset 0 0 3px rgba(0, 0, 0, 0.2);
+}
+.switch-input:checked ~ .switch-label:before {
+	opacity: 0;
+}
+.switch-input:checked ~ .switch-label:after {
+	opacity: 1;
+}
+.switch-handle {
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	width: 28px;
+	height: 28px;
+	background: linear-gradient(to bottom, #FFFFFF 40%, #f0f0f0);
+	background-image: -webkit-linear-gradient(top, #FFFFFF 40%, #f0f0f0);
+	border-radius: 100%;
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+.switch-handle:before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -6px 0 0 -6px;
+	width: 12px;
+	height: 12px;
+	background: linear-gradient(to bottom, #eeeeee, #FFFFFF);
+	background-image: -webkit-linear-gradient(top, #eeeeee, #FFFFFF);
+	border-radius: 6px;
+	box-shadow: inset 0 1px rgba(0, 0, 0, 0.02);
+}
+.switch-input:checked ~ .switch-handle {
+	left: 74px;
+	box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Transition
+============================================================ */
+.switch-label, .switch-handle {
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+	-moz-transition: All 0.3s ease;
+	-o-transition: All 0.3s ease;
+}
+.main {
+	width: 80%;
+	margin: 0 auto;
+	padding: 0 0 1rem 0;
+  display: flex;
+  justify-content:center;
+	align-items: center;
+}
+.leftside {
+	width: 45%;
+	text-align: right;
+	padding-right: 2rem;
+	margin: -1rem 0 0 0;
+}
+.rightside {
+	width: 55%;
+}
+</style>
+</head>
+
+<body>
+<div id="wrapper">
+		<header id="header">Project Planner</header>
+		<section>
+				<div class="main">
+					<p>INSTRUCTIONS: Select ALL criteria that are important to your project:</p>
+				</div>
+				<div class="main">
+					<div class="leftside">
+						<h3>GOOD</h3>
+					</div>
+					<div class="rightside">
+						<label class="switch">
+						<input id="good" class="switch-input red" type="checkbox" />
+						<span class="switch-label" data-on="On" data-off="Off"></span> <span class="switch-handle"></span> </label>
+					</div>
+				</div>
+				<div class="main">
+					<div class="leftside">
+						<h3>FAST</h3>
+					</div>
+					<div class="rightside">
+						<label class="switch">
+						<input id="fast" class="switch-input blue" type="checkbox" />
+						<span class="switch-label" data-on="On" data-off="Off"></span> <span class="switch-handle"></span> </label>
+					</div>
+				</div>
+				<div class="main">
+					<div class="leftside">
+						<h3>CHEAP</h3>
+					</div>
+					<div class="rightside">
+						<label class="switch">
+						<input id="cheap" class="switch-input yellow" type="checkbox" />
+						<span class="switch-label" data-on="On" data-off="Off"></span> <span class="switch-handle"></span> </label>
+					</div>
+				</div>
+		</section>
+</div>
+
+<!-- - - - - - - - - - - JS  - - - - - - - - - - -->
+<!- - - Foundation Jquery - -  - - - - - - - - - - - - - - - - - - - - - - - -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<!-- - - - - Foundation Accordion Intialization + Multi-expand ON - - - -  -->
+	<script>
+		$(document).ready(function(){
+
+// - - - good - - -
+		$('#good').click(function () {
+				if(($(this). prop("checked") == true) && ($('#fast'). prop("checked")== true) && ($('#cheap'). prop("checked")== true)) {
+					$('#cheap').attr('checked', false);
+				}
+				else if($('#good'). prop("checked") == false){
+				}
+      });
+
+// - - - fast - - -
+		$('#fast').click(function () {
+				if(($(this). prop("checked") == true) && ($('#good'). prop("checked")== true) && ($('#cheap'). prop("checked")== true)) {
+					$('#good').attr('checked', false);
+				}
+				else if($('#fast'). prop("checked") == false){
+				}
+      });
+
+// - - - cheap - - -
+		$('#cheap').click(function () {
+				if(($(this). prop("checked") == true) && ($('#fast'). prop("checked")== true) && ($('#good'). prop("checked")== true)) {
+					$('#fast').attr('checked', false);
+				}
+				else if($('#cheap'). prop("checked") == false){
+				}
+    });
+  });
+
+	</script>
+
+</body>
+</html>
